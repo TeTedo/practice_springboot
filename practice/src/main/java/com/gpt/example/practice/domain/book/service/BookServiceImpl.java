@@ -36,7 +36,6 @@ public class BookServiceImpl implements BookService {
         if (book.isPresent()) {
             return toBookResponse(book.get());
         } else {
-            System.out.println("===============================this is Error");
             throw new BookNotFoundException(id);
         }
     }
