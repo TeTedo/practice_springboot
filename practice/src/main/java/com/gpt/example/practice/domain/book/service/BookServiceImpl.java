@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.gpt.example.practice.domain.book.dto.request.CreateBookRequest;
 import com.gpt.example.practice.domain.book.dto.response.BookResponse;
 import com.gpt.example.practice.domain.book.exception.BookNotFoundException;
 import com.gpt.example.practice.domain.book.mapper.BookMapper;
@@ -42,5 +44,20 @@ public class BookServiceImpl implements BookService {
 
     private BookResponse toBookResponse(Book book) {
         return bookMapper.toBookResponse(book);
+    }
+
+    @Override
+    @Transactional
+    public void addBook(CreateBookRequest createBookRequest) {
+        bookRepository.addBook(createBookRequest.title(),
+                createBookRequest.author(), createBookRequest.publicationYear());
+    }
+
+    @Override
+    @Transactional
+    public void updateBook(CreateBookRequest createBookRequest, long id) {
+        bookRepository.updateBook(id, createBookRequest.title(), createBookRequest.author(),
+                createBookRequest.publicationYear());
+
     }
 }
