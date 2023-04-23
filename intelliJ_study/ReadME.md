@@ -13,3 +13,11 @@ jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 JPA Auditing - 어떻게 자동화, 캐시?
 
 JPA 책 : 자바 ORM 표준 JPA 프로그래밍 (김영한)
+
+쿼리 : Querydsl, jooq, MyBatis
+
+Querydsl의 장점
+
+1. 타입 안정성 보장
+
+2. 많은 레퍼런스
