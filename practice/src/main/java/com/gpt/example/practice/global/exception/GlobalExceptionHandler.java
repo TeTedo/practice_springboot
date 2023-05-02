@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.gpt.example.practice.domain.book.exception.BookNotFoundException;
-import com.gpt.example.practice.global.common.dto.ApiResponse;
 import com.gpt.example.practice.global.common.dto.ErrorResponse;
 
 @RestControllerAdvice
