@@ -16,11 +16,6 @@ public class JpaMain {
         tx.begin();
 
         try{
-            Member member1 = new Member(150L, "A");
-            Member member2 = new Member(150L, "A");
-
-            em.persist(member1);
-            em.persist(member2);
 
 
             tx.commit();
