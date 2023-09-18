@@ -53,10 +53,10 @@ public class InitDb {
             Member member = createMember("userB");
             em.persist(member);
 
-            Book book1 = createBook("JPA1 Book",10000);
+            Book book1 = createBook("JPA3 Book",10000);
             em.persist(book1);
 
-            Book book2 = createBook("JPA2 Book",10000);
+            Book book2 = createBook("JPA4 Book",10000);
             em.persist(book2);
 
             OrderItem orderItem1 = OrderItem.createOrderItem(book1, 10000, 1);
