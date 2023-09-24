@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom,JpaSpecificationExecutor<Member> {
 
     List<Member> findByUsernameAndAgeGreaterThan(String username, int age);
 
@@ -42,8 +42,8 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     List<MemberDto> findMemberDto();
 
     @Query("""
-            select m 
-            from Member m 
+            select m
+            from Member m
             where m.username in :names""")
     List<Member> findByNames(@Param("names") Collection<String> names);
 
